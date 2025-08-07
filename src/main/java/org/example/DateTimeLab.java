@@ -29,11 +29,19 @@ public class DateTimeLab {
         // System.out.println("Default format: " + event);
         // System.out.println("Custom format: " + event.format(dtf));
 
-        LocalDate startDate = LocalDate.of(2025, 9, 1);
-        startDate.plusDays(10);
-        System.out.println("Start date after trying to modify it: " + startDate);
-        LocalDate endDate = startDate.plusDays(10);
-        System.out.println("The original start date is still: " + startDate);
-        System.out.println("The new end date is: " + endDate);
+        // LocalDate startDate = LocalDate.of(2025, 9, 1);
+        // startDate.plusDays(10);
+        // System.out.println("Start date after trying to modify it: " + startDate);
+        // LocalDate endDate = startDate.plusDays(10);
+        // System.out.println("The original start date is still: " + startDate);
+        // System.out.println("The new end date is: " + endDate);
+
+        LocalDateTime baseTime = LocalDateTime.of(2025, 10, 15, 10, 30, 0);
+        LocalDateTime futureTime = baseTime.plusYears(1).plusMonths(2).plusHours(5);
+        LocalDateTime pastTime = baseTime.minusWeeks(3).minusDays(3);
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        System.out.println("Base time:   " + baseTime.format(dtf));
+        System.out.println("Future time: " + futureTime.format(dtf));
+        System.out.println("Past time:   " + pastTime.format(dtf));
     }
 }
