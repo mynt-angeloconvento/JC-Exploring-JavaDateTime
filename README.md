@@ -23,3 +23,7 @@
 #### Exercise 5
 
 ![alt text](image-4.png)
+
+#### Exercise 6
+
+![alt text](image-5.png)

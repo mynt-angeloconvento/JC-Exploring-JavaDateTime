@@ -3,6 +3,7 @@ package org.example;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
@@ -36,12 +37,20 @@ public class DateTimeLab {
         // System.out.println("The original start date is still: " + startDate);
         // System.out.println("The new end date is: " + endDate);
 
-        LocalDateTime baseTime = LocalDateTime.of(2025, 10, 15, 10, 30, 0);
-        LocalDateTime futureTime = baseTime.plusYears(1).plusMonths(2).plusHours(5);
-        LocalDateTime pastTime = baseTime.minusWeeks(3).minusDays(3);
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        System.out.println("Base time:   " + baseTime.format(dtf));
-        System.out.println("Future time: " + futureTime.format(dtf));
-        System.out.println("Past time:   " + pastTime.format(dtf));
+        // LocalDateTime baseTime = LocalDateTime.of(2025, 10, 15, 10, 30, 0);
+        // LocalDateTime futureTime = baseTime.plusYears(1).plusMonths(2).plusHours(5);
+        // LocalDateTime pastTime = baseTime.minusWeeks(3).minusDays(3);
+        // DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        // System.out.println("Base time: " + baseTime.format(dtf));
+        // System.out.println("Future time: " + futureTime.format(dtf));
+        // System.out.println("Past time: " + pastTime.format(dtf));
+
+        LocalDate date1 = LocalDate.of(2024, 3, 15);
+        LocalDate date2 = LocalDate.of(2026, 7, 20);
+        Period period = Period.between(date1, date2);
+        System.out.print("The period between the two dates is: ");
+        System.out.print(period.getYears() + " years, ");
+        System.out.print(period.getMonths() + " months, and ");
+        System.out.println(period.getDays() + " days.");
     }
 }
